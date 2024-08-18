@@ -3,6 +3,10 @@ root.classList.add("root")
 
 let container = document.createElement("div")
 
+let front_div = document.createElement("div")
+root.appendChild(front_div)
+front_div.classList.add("front")
+
 
 function Socials(e){
     e.preventDefault()
@@ -111,7 +115,7 @@ function Contact(e){
     container.innerHTML = ''
     let div = document.createElement("div") 
     container.appendChild(div)
-    div.innerHTML = "sup"
+    div.innerHTML = "AlexandreDiamond@protonmail.com"
 }
 
 function Material(e){
@@ -119,7 +123,7 @@ function Material(e){
     container.innerHTML = ''
     let div = document.createElement("div") 
     container.appendChild(div)
-    div.innerHTML = "sup"
+    div.innerHTML = "under construction :)"
 }
 
 function Projects(e){
@@ -127,8 +131,13 @@ function Projects(e){
     container.innerHTML = ''
     let div = document.createElement("div") 
     container.appendChild(div)
-    div.innerHTML = "sup"
+    let img = document.createElement("img")
+    img.src = "output.gif"
+    div.appendChild(img)
+
 }
+
+let leet = 0
 
 let links = {
     "CV": CV,
@@ -136,14 +145,25 @@ let links = {
     "Socials":Socials,
     "Material":Material,
     "Contact": Contact,
-    "Register": () => {}
+    "Register": () => {},
+    "fly": (e) => {
+        e.preventDefault()
+        fly()
+    },
+    "L33t": (e) => {
+        e.preventDefault()
+        let navbar = document.getElementById('navbar')
+        navbar.style.color = "white"
+        l33t()
+    },
 }
 
 let init = [
     function displayMenu(){
         let navbar = document.createElement("div")
+        navbar.id = 'navbar'
         navbar.classList.add("navbar")
-        root.appendChild(navbar)
+        front_div.appendChild(navbar)
 
         let pfp = document.createElement("img")
         pfp.classList.add("pfp")
@@ -174,8 +194,7 @@ let init = [
         
     },
     function addContainer(){
-        root.appendChild(container)
-        container.innerHTML = "test"
+        front_div.appendChild(container)
         container.classList.add("container")
     }
 ]
