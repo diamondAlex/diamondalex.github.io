@@ -143,7 +143,7 @@ let links = {
     "CV": CV,
     "Projects":Projects,
     "Socials":Socials,
-    "Material":Material,
+    //"Material":Material,
     "Contact": Contact,
     "Register": () => {},
     "fly": (e) => {
