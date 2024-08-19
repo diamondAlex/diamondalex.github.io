@@ -13,8 +13,63 @@ var ctx = canvas.getContext("2d");
 
 let bx = 300
 let by = 300
+let sId = 0
+let fly_is = 0
+
+window.addEventListener('click', (e) => {
+    let x = e.clientX
+    let y = e.clientY
+    if(fly_is && bx-10 <= x && x <= bx+15 && by-10 <= y && y <= by+15){
+        clearInterval(sId);
+        killFly()
+    }
+})
+
+async function killFly(){
+    fly_is= 0
+    ctx.fillStyle='red'
+    ctx.fillRect(bx,by,10,10)
+    ctx.fillStyle='red'
+    ctx.fillRect(bx-5,by-5,5,5)
+    ctx.fillStyle='red'
+    ctx.fillRect(bx+10,by-5,5,5)
+
+    await new Promise((resolve) =>{
+        setTimeout(()=>{resolve()},100)
+    })
+
+    ctx.fillStyle='rgb(189, 187, 187)'
+    ctx.fillRect(bx,by,10,10)
+    ctx.fillStyle='rgb(189, 187, 187)'
+    ctx.fillRect(bx-5,by-5,5,5)
+    ctx.fillStyle='rgb(189, 187, 187)'
+    ctx.fillRect(bx+10,by-5,5,5)
+
+
+    ctx.fillStyle='red'
+    ctx.fillRect(bx-3,by-3,5,5)
+    ctx.fillStyle='red'
+    ctx.fillRect(bx+3,by+3,5,5)
+    ctx.fillStyle='red'
+    ctx.fillRect(bx-7,by-7,5,5)
+    ctx.fillStyle='red'
+    ctx.fillRect(bx+12,by-7,5,5)
+    await new Promise((resolve) =>{
+        setTimeout(()=>{resolve()},100)
+    })
+
+    ctx.fillStyle='rgb(189, 187, 187)'
+    ctx.fillRect(bx-3,by-3,5,5)
+    ctx.fillStyle='rgb(189, 187, 187)'
+    ctx.fillRect(bx+3,by+3,5,5)
+    ctx.fillStyle='rgb(189, 187, 187)'
+    ctx.fillRect(bx-7,by-7,5,5)
+    ctx.fillStyle='rgb(189, 187, 187)'
+    ctx.fillRect(bx+12,by-7,5,5)
+}
 
 function fly(){
+    fly_is = 1
     function drawBug(){
         ctx.fillStyle='rgb(189, 187, 187)'
         ctx.fillRect(bx,by,10,10)
@@ -24,8 +79,6 @@ function fly(){
         ctx.fillRect(bx+10,by-5,5,5)
         let x = 15 - Math.floor(Math.random()*30)
         let y = 15 - Math.floor(Math.random()*30)
-        console.log(x)
-        console.log(y)
         bx+=x
         by+=y
         ctx.fillStyle='black'
@@ -36,7 +89,7 @@ function fly(){
         ctx.fillRect(bx+10,by-5,5,5)
     }
     
-    setInterval(drawBug, 100)
+    sId = setInterval(drawBug, 100)
 }
 
 function l33t(){
