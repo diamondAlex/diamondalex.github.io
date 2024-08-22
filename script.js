@@ -131,9 +131,53 @@ function Projects(e){
     container.innerHTML = ''
     let div = document.createElement("div") 
     container.appendChild(div)
+    let text = document.createElement("div") 
+    text.innerHTML = "MediaPlayer - A media... player? <br/>"
+    div.appendChild(text)
     let img = document.createElement("img")
+    img.addEventListener('click', () =>{
+          window.open("https://github.com/diamondAlex/MediaPlayer", '_blank').focus();
+    })
     img.src = "output.gif"
     div.appendChild(img)
+    let text2 = document.createElement("div") 
+    text2.innerHTML = "<br/> A web browser game. Battler and idler<br/>"
+    div.appendChild(text2)
+    let img2 = document.createElement("img")
+    img2.src = "out2.gif"
+    img2.addEventListener('click', () =>{
+          window.open("https://github.com/diamondAlex/battler", '_blank').focus();
+    })
+    div.appendChild(img2)
+    let text3 = document.createElement("div") 
+    text3.innerHTML = "<br/> Notzar - A tracking and efficiency app. <br/>"
+    div.appendChild(text3)
+    let img3 = document.createElement("img")
+    img3.src = "out3.gif"
+    img3.addEventListener('click', () =>{
+          window.open("https://github.com/diamondAlex/Notzar", '_blank').focus();
+    })
+    div.appendChild(img3)
+    
+    let text4 = document.createElement("div") 
+    text4.innerHTML = "<br/> Zhengyi - A simple blog. <br/>"
+    div.appendChild(text4)
+    let img4 = document.createElement("img")
+    img4.src = "out5.gif"
+    img4.addEventListener('click', () =>{
+          window.open("https://github.com/diamondAlex/Zhengyi", '_blank').focus();
+    })
+    div.appendChild(img4)
+
+    let text5 = document.createElement("div") 
+    text5.innerHTML = "<br/> Praxis - A chess practice tool. <br/>"
+    div.appendChild(text5)
+    let img5 = document.createElement("img")
+    img5.src = "out6.gif"
+    img5.addEventListener('click', () =>{
+          window.open("https://github.com/diamondAlex/Praxis", '_blank').focus();
+    })
+    div.appendChild(img5)
 
 }
 
@@ -149,6 +193,12 @@ let links = {
     "fly": (e) => {
         e.preventDefault()
         fly()
+    },
+    "fire": (e) => {
+        e.preventDefault()
+        document.getElementById("container")
+        container.innerHTML = "click left mouse button to throw fire"
+        startFire()
     },
     "L33t": (e) => {
         e.preventDefault()
