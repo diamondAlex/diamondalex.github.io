@@ -192,6 +192,8 @@ let links = {
     "Register": () => {},
     "fly": (e) => {
         e.preventDefault()
+        document.getElementById("container")
+        container.innerHTML = "click on the fly!"
         fly()
     },
     "fire": (e) => {
