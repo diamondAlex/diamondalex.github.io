@@ -174,19 +174,6 @@ let f_y
 
 let i = 0 
 
-function fire2(){
-    let imgdata = ctx.createImageData(100,100)
-    for(let i = 0;i<img_bit.length;i++){
-        if(img_bit[i] == 1){
-            imgdata.data[i*4] = 242
-            imgdata.data[i*4+1] = 60
-            imgdata.data[i*4+2] = 8
-            imgdata.data[i*4+3] = 255
-        }
-    }
-    ctx.putImageData(imgdata,m_x-50,m_y-50)
-}
-
 let new_img = []
 
 function rotation(){
@@ -246,7 +233,6 @@ function fire(e){
         l_y = dy
         s_x = m_x
         s_y = m_y
-        console.log("should launch")
         clear_prev_fire()
         clearInterval(int_l)
         base = 20
@@ -270,7 +256,6 @@ function clear_prev_fire(){
     ctx.fillRect(s_x+(20-base)*l_x,s_y+(20-base)*l_y,100,100)
 }
 function launch(){
-    console.log('launching')
     clear_prev_fire()
     let imgdata = ctx.createImageData(100,100)
     for(let i = 0;i<new_img.length;i++){
@@ -280,6 +265,15 @@ function launch(){
             imgdata.data[i*4+2] = 8
             imgdata.data[i*4+3] = 255
         }
+    }
+
+    let hit_x = s_x+(20-base)*l_x
+    let hit_y = s_y+(20-base)*l_y
+
+    if(fly_is && hit_x-40 <= bx && bx <= hit_x+35 && hit_y-50 <= by && by <= hit_y+55){
+        console.log("hit fly")
+        clearInterval(sId);
+        killFly()
     }
     base --
     ctx.putImageData(imgdata,s_x+(20-base)*l_x,s_y+(20-base)*l_y)

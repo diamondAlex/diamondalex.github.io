@@ -138,7 +138,7 @@ function Projects(e){
     img.addEventListener('click', () =>{
           window.open("https://github.com/diamondAlex/MediaPlayer", '_blank').focus();
     })
-    img.src = "output.gif"
+    img.src = "out1.gif"
     div.appendChild(img)
     let text2 = document.createElement("div") 
     text2.innerHTML = "<br/> A web browser game. Battler and idler<br/>"
@@ -179,6 +179,15 @@ function Projects(e){
     })
     div.appendChild(img5)
 
+    let text6 = document.createElement("div") 
+    text6.innerHTML = "<br/> td, a todo finder cli util <br/>"
+    div.appendChild(text6)
+    let img6 = document.createElement("img")
+    img6.src = "out8.gif"
+    img6.addEventListener('click', () =>{
+          window.open("https://github.com/diamondAlex/bash_utils", '_blank').focus();
+    })
+    div.appendChild(img6)
 }
 
 let leet = 0
