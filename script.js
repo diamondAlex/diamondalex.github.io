@@ -2,6 +2,7 @@ let root = document.getElementById("root")
 root.classList.add("root")
 
 let container = document.createElement("div")
+container.id = "container"
 
 let front_div = document.createElement("div")
 root.appendChild(front_div)
