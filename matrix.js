@@ -22,7 +22,7 @@ let fly_is = 0
 //for velo
 let m_x=0
 let m_y=0
-let kill_total = 0
+let killcount = 0
 
 window.addEventListener('mousemove', (e) => {
     m_x = e.clientX
@@ -43,7 +43,9 @@ window.addEventListener('click', (e) => {
 
 async function killFly(){
     fly_is= 0
-    kill_total++
+    killcount++
+    let div = document.getElementById("killcount")
+    div.innerHTML = " x " + killcount.toString()
     ctx.fillStyle='red'
     ctx.fillRect(bx,by,10,10)
     ctx.fillStyle='red'

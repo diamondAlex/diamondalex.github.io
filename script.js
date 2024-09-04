@@ -240,6 +240,12 @@ let init = [
         name.classList.add("name")
         name.innerHTML = "Alexandre Diamond"
         title.appendChild(name)
+        
+        let killcount = document.createElement("div")
+        killcount.id = "killcount"
+        killcount.classList.add("name")
+        killcount.innerHTML = ""
+        title.appendChild(killcount)
 
         let list = document.createElement("div")
         list.classList.add("list")
