@@ -199,7 +199,6 @@ let links = {
     "Socials":Socials,
     //"Material":Material,
     "Contact": Contact,
-    "Register": () => {},
     "fly": (e) => {
         e.preventDefault()
         document.getElementById("container")
@@ -218,6 +217,7 @@ let links = {
         navbar.style.color = "white"
         l33t()
     },
+    "Register": () => {},
 }
 
 let init = [
